@@ -1,0 +1,14 @@
+
+import pandas as pd
+import seaborn
+import matplotlib.pyplot as plt
+
+# Load the GHG emissions data
+df = pd.read_csv("C:/Users/Alawi Alsakkaf/Downloads/GHG-Trend/API_EN.ATM.GHGT.KT.CE_DS2_en_csv_v2_3419642.csv")
+
+# Reshape the DataFrame from wide format to long format, organizing the data by year
+df_long = pd.melt(df, id_vars=['Country Name', 'Country Code', 'Indicator Name', 'Indicator Code'], 
+                  var_name="Year", value_name="GHG Emissions")
+
+# Save the reshaped DataFrame as a new CSV file
+df_long.to_csv("Real_Trend_GHG.csv", index=False)
