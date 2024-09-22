@@ -1,0 +1,5 @@
+SELECT*from international
+
+where reportername = 'United Arab Emirates'and partnername='Saudi Arabia'
+
+order by year DESC;
